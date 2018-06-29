@@ -44,6 +44,17 @@ export default {
       wx.navigateTo({ url })
     },
     getUserInfo () {
+      wx.request({
+        url: 'https://mwhowgjk.qcloud.la/weapp/demo',
+        method: 'GET',
+        success (res) {
+          console.log(res)
+        },
+        fail (err) {
+          console.log('err', err)
+        }
+      })
+
       // 调用登录接口
       wx.login({
         success: (res) => {
