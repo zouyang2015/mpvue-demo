@@ -1,6 +1,8 @@
 <template>
   <div class="container" @click="clickHandle('test click', $event)">
-
+1<br>1<br>1<br>1
+    <button open-type="getUserInfo" @getuserinfo="login">获取用户信息</button>
+    <open-data type="userAvatarUrl"></open-data>
     <div class="userinfo" @click="bindViewTap">
       <img class="userinfo-avatar" v-if="userInfo.avatarUrl" :src="userInfo.avatarUrl" background-size="cover" />
       <div class="userinfo-nickname">
@@ -36,7 +38,6 @@ export default {
   components: {
     card
   },
-
   methods: {
     bindViewTap () {
       const url = '../logs/main'
@@ -45,20 +46,21 @@ export default {
     getUserInfo () {
       // 调用登录接口
       wx.login({
-        success: () => {
-          wx.getUserInfo({
-            success: (res) => {
-              this.userInfo = res.userInfo
-            }
-          })
+        success: (res) => {
+          console.log('login', res)
+        },
+        fail: (err) => {
+          console.log('err', err)
         }
       })
     },
+    login () {
+
+    },
     clickHandle (msg, ev) {
-      console.log('clickHandle:', msg, ev)
+      // console.log('clickHandle:', msg, ev)
     }
   },
-
   created () {
     // 调用应用实例的方法获取全局数据
     this.getUserInfo()
@@ -67,10 +69,23 @@ export default {
 </script>
 
 <style scoped>
+/** wxss **/
+/** 修改button默认的点击态样式类**/
+.button-hover {
+  background-color: red;
+}
+/** 添加自定义button点击态样式类**/
+.other-button-hover {
+  background-color: blue;
+}
+
+
 .userinfo {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  height: 50rpx;
 }
 
 .userinfo-avatar {

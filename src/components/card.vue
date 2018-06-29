@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p class="card">
+    <p class="card" :class="{red: true}">
       {{text}}
     </p>
   </div>
@@ -15,5 +15,8 @@ export default {
 <style>
 .card {
   padding: 10px;
+}
+.red {
+  color: red;
 }
 </style>

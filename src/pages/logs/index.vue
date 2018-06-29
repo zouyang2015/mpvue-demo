@@ -24,8 +24,15 @@ export default {
   },
 
   created () {
+    console.log('created logs')
     const logs = (wx.getStorageSync('logs') || [])
     this.logs = logs.map(log => formatTime(new Date(log)))
+  },
+  onReady () {
+    console.log('onReady logs')
+  },
+  onLoad () {
+    console.log('onLoad logs')
   }
 }
 </script>

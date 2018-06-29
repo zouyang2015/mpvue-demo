@@ -7,6 +7,21 @@ export default {
     wx.setStorageSync('logs', logs)
 
     console.log('app created and cache logs by setStorageSync')
+  },
+  mounted () {
+    console.log('mounted')
+  },
+  onReady () {
+    console.log('onReady')
+  },
+  onLaunch () {
+    console.log('onLaunch')
+  },
+  onShow () {
+    console.log('onShow')
+  },
+  onHide () {
+    console.log('onHide')
   }
 }
 </script>
@@ -18,7 +33,7 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 200rpx 0;
+  padding: 200 rpx 0;
   box-sizing: border-box;
 }
 /* this rule will be remove */
