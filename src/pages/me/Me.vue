@@ -6,7 +6,10 @@
 
 <script>
 export default {
-  name: 'Me'
+  name: 'Me',
+  data () {
+
+  }
 }
 </script>
 

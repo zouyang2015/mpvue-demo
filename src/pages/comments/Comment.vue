@@ -1,6 +1,6 @@
 <template>
   <div>
-    个人中心
+    评论过的书页面
   </div>
 </template>
 
