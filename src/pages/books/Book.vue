@@ -3,6 +3,8 @@
     图书列表页面
     {{openid}}<br>
     {{session_key}}
+    <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">获取用户信息</button>
+    <open-data type="groupName" open-gid="xxxxxx"></open-data>
   </div>
 </template>
 
@@ -33,7 +35,7 @@ export default {
           },
           method: 'GET',
           success: (res) => {
-            console.log(res.data)
+            // console.log(res.data)
             that.openid = res.data.openid
             that.session_key = res.data.session_key
           }
